@@ -1,5 +1,5 @@
-,Unnamed: 0,name,link,revenue,num_employee
-0,0,E & C Chemicals Inc.,https://www.eandcchemicals.com/index.html,$5 - 9.9 Mil,10-49
-1,1,"TRInternational, Inc.",http://www.trichemicals.com/,$25 - 49.9 Mil,10-49
-2,2,"GFS Chemicals, Inc.",http://www.gfschemicals.com,$25 - 49.9 Mil,100-199
-3,3,"Mayzo, Inc.",https://www.mayzo.com/,$25 - 49.9 Mil,10-49
+,name,link,revenue,num_employee
+0,E & C Chemicals Inc.,https://www.eandcchemicals.com/index.html,$5 - 9.9 Mil,10-49
+1,TRInternational Inc.,http://www.trichemicals.com/,$25 - 49.9 Mil,10-49
+2,GFS Chemicals Inc.,http://www.gfschemicals.com,$25 - 49.9 Mil,100-199
+3,Mayzo Inc.,https://www.mayzo.com/,$25 - 49.9 Mil,10-49

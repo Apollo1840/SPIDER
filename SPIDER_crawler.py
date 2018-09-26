@@ -19,7 +19,7 @@ class RevenueCrawler():
         supplier = supplier_name.replace(' ','+') + '+wiki'
         print(supplier)
         
-        bc = BasicCrawler(headers='auto')
+        bc = BasicCrawler(headers='auto', proxy='auto')
         search_link = 'https://www.google.com/search?q={}'.format(supplier)
     
         print(search_link)
