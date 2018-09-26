@@ -1,4 +1,4 @@
-,material,name,link,revenue,num_employee,year_founded
-0,metal,"Advanced Metalworking Practices, LLC",http://www.amp-llc.net/index.html,Under $1 Mil,1-9,2002
-1,metal,Technic Inc.,https://www.technic.com/,$100 - 249.9 Mil,500-999,2002
-2,metal,Steward Advanced Materials LLC,https://www.stewardmaterials.com,$10 - 24.9 Mil,10-49,2002
+,Unnamed: 0,name,link,revenue,num_employee
+0,0,"Advanced Metalworking Practices, LLC",http://www.amp-llc.net/index.html,Under $1 Mil,1-9
+1,1,Technic Inc.,https://www.technic.com/,$100 - 249.9 Mil,500-999
+2,2,Steward Advanced Materials LLC,https://www.stewardmaterials.com,$10 - 24.9 Mil,10-49

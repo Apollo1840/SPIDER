@@ -265,6 +265,7 @@ class ThomasnetCrawler():
         supplier_links = self.get_suppliers_link_general(material)
         for sl in supplier_links[:number_suppliers]:
             name, link, revenue, num_employee, year_founded = self.get_bizdetails(sl)
+            print(sl)
             
             materials.append(material)
             names.append(name)
@@ -285,8 +286,17 @@ class ThomasnetCrawler():
         
         self.df = df
         print(df)
-        df.to_csv('SPIDER_{}.csv'.format(material))
+        df.to_csv('/data/SPIDER_{}.csv'.format(material))
         return df
+
+
+def csv_refiner(path):
+    df=pd.read_csv(path)
+    del df['material']
+    del df['year_founded']
+    df.to_csv(path)
+    
+    
 
     
 def test():
@@ -312,11 +322,15 @@ if __name__ == '__main__':
     pd.set_option('max_columns',None) 
     
     tc = ThomasnetCrawler()
-    tc.run('metal')
-    # df = tc.run('plastics', number_suppliers=3)
+    # tc.run('metal')
+    df = tc.run('plastics', number_suppliers=10)
     
     #df = tc.run('chemicals', number_suppliers=4)
     
+    # csv_refiner(r'data/SPIDER_metal.csv')
+    # csv_refiner(r'data/SPIDER_plastics.csv')
+    # csv_refiner(r'data/SPIDER_chemicals.csv')
+
     
 
     
