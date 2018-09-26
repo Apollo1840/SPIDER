@@ -12,8 +12,8 @@
 
     <!-- Bootstrap core CSS -->
     <link href="vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
-    
-    
+
+
     <!-- Custom fonts for this template -->
     <link href="vendor/fontawesome-free-5.3.1-web/css/all.min.css" rel="stylesheet" type="text/css">
     <link href="https://fonts.googleapis.com/css?family=Roboto:300" rel="stylesheet">
@@ -70,11 +70,11 @@
             <div class="row bounce-in-top">
                 <div class="col-lg-10 mx-auto">
                     <h1 class="text-uppercase">
-                        <strong>HELLO.<br>We are <span class="typer" data-typer-targets='{ "targets" : ["SIEMENS HEALTHINEERS.","PROCUREMENT.", "DATA.", "EXTRACTION.", "ROBOT.","INTELLIGENCE."]}'></span><br>Welcome to <span style="color:#099">SPIDER</span>.</strong>
+                        <strong>HELLO.<br>We are <span class="typer" data-typer-targets='{ "targets" : ["SIEMENS HEALTHINEERS.","PROCUREMENT.", "DATA.", "EXTRACTION.", "ROBOT.","INTELLIGENT."]}'></span><br>Welcome to SPIDER.</strong>
                     </h1>
                 </div>
                 <div class="col-lg-10 mx-auto">
-                    <h2>we help you to find information about your material <br>&#38;<br>supplier on the web
+                    <h2>we help you to find information about your material <br>&#38;<br>supplier on the web.
                     </h2>
                 </div>
             </div>
@@ -94,22 +94,20 @@
                     <form name="sentMessage" id="contactForm" novalidate="novalidate">
                         <div class="control-group">
                             <div class="form-group floating-label-form-group controls mb-0 pb-2">
-                                <label>Which material are you looking for?</label>
+                                <label>Material</label>
                                 <input class="form-control" id="name" type="text" placeholder="Which material are you looking for?" required="required" data-validation-required-message="Please enter your name.">
                                 <p class="help-block text-danger"></p>
                             </div>
-                            <div class="chip">
-                                metal
-                            </div>
-                            <div class="chip">
-                                plastics
-                            </div>
-                            <div class="chip">
-                                chemicals
-                            </div>
+                            <div id="contact-chips">
 
+                            </div>
+                            <div align="right">
+                                <button type="button" onclick="myAdd()" class="btn btn-primary" style="border-radius: 300px; background-color:#ec6602">Add +</button></div>
                         </div>
                     </form>
+                </div>
+                <div class="col-lg-8 mx-auto">
+
                 </div>
                 <div class="col-lg-8 mx-auto">
                     <br />
@@ -118,10 +116,10 @@
                     </div>
                     <br />
                     <div id="myDIV">
-                    <div id="employee_table">
+                        <div id="employee_table">
 
-                    </div>
-                    
+                        </div>
+
                         <div class="row">
                             <div class="col-lg-10 text-left">
                                 <p>Top Suppliers for this material in 2017</p>
@@ -186,7 +184,7 @@
                         <div class="control-group">
                             <div class="form-group floating-label-form-group controls mb-0 pb-2">
                                 <label>Which supplier are you looking for?</label>
-                                <input class="form-control" id="name" type="text" placeholder="Which supplier are you looking for?" required="required" data-validation-required-message="Please enter your name.">
+                                <input class="form-control" id="name2" type="text" placeholder="Which supplier are you looking for?" required="required" data-validation-required-message="Please enter your name.">
                                 <p class="help-block text-danger"></p>
                             </div>
                             <div class="chip">
@@ -370,6 +368,9 @@
 
         });
     </script>
+    <script type="text/html" id="appendTemplate">
+        <div class="chip">John Doe</div>
+</script>
 
 
 </body>
