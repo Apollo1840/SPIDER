@@ -346,7 +346,7 @@
                      url: "http://localhost:5000/materials?name="+x,
                      success: function() {
                           $.ajax({
-                             url: "{{ url_for('static', filename='employee.csv') }}",
+                             url: "{{ url_for('static', filename='SPIDER.csv') }}",
                              dataType: "text",
                              success: function(data) {
                                     var employee_data = data.split(/\r?\n|\r/);
