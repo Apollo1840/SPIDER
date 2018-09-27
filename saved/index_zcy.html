@@ -13,7 +13,7 @@
     <!-- Bootstrap core CSS -->
     <link href="{{ url_for('static', filename='vendor/bootstrap/css/bootstrap.min.css') }}" rel="stylesheet">
     
-
+    
     <!-- Custom fonts for this template -->
     <link href="{{ url_for('static', filename='vendor/fontawesome-free-5.3.1-web/css/all.min.css') }}" rel="stylesheet">
     
@@ -66,33 +66,54 @@
         </div>
     </nav>
 
-    <header class="masthead" style="background-color:#fff">
-        <div class="container" style="margin-top:150px">
-            <div class="row" style="background-color:#ec6602;padding:20px 0px">
+    <header class="masthead text-center d-flex" style="background-color:#ec6602">
+        <div class="container my-auto">
+            <div class="row bounce-in-top">
                 <div class="col-lg-10 mx-auto">
-                    <h2 class="text-uppercase" style="font-size:42px">
-                        <strong>Hello. <br>Welcome to SPIDER</strong>  
+                    <h1 class="text-uppercase">
+                        <strong>HELLO.<br>We are <span class="typer" data-typer-targets='{ "targets" : ["SIEMENS HEALTHINEERS.","PROCUREMENT.", "DATA.", "EXTRACTION.", "ROBOT.","INTELLIGENCE."]}'></span><br>Welcome to <span style="color:#099">SPIDER</span>.</strong>
+                    </h1>
+                </div>
+                <div class="col-lg-10 mx-auto">
+                    <h2>we help you to find information about your material <br>&#38;<br>supplier on the web
                     </h2>
                 </div>
             </div>
         </div>
-        <div class="container" style="margin-top:50px">
+    </header>
+
+    <section id="about">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-12 text-center">
+                    <h2 class="section-heading">SEARCH FOR MATERIAL.</h2>
+                    <hr class="my-4">
+                </div>
+            </div>
             <div class="row">
                 <div class="col-lg-8 mx-auto">
+                    <form name="sentMessage" id="contactForm" novalidate="novalidate">
                         <div class="control-group">
                             <div class="form-group floating-label-form-group controls mb-0 pb-2">
-                                <label>Material</label>
-                                <input class="form-control" id="name" type="text" placeholder="Which materials are you looking for?">
+                                <label>Which material are you looking for?</label>
+                                <form method="POST">
+                                    <input name="mname" type="text" class="form-control" id="name" placeholder="Which material are you looking for?" required="required" data-validation-required-message="Please enter your name.">
+                                    <input type="submit" value="Click Me !">
+                                </form>
                                 <p class="help-block text-danger"></p>
                             </div>
-                            <div id="contact-chips">
-
+                            <div class="chip">
+                                metal
                             </div>
-                        </div>
-                    
-                </div>
-                <div class="col-lg-8 mx-auto">
+                            <div class="chip">
+                                plastics
+                            </div>
+                            <div class="chip">
+                                chemicals
+                            </div>
 
+                        </div>
+                    </form>
                 </div>
                 <div class="col-lg-8 mx-auto">
                     <br />
@@ -100,12 +121,11 @@
                         <button type="button" name="load_data" onclick="myFunction()" id="load_data" class="btn btn-primary btn-xl" style="border-radius: 5px">Load Data</button>
                     </div>
                     <br />
-                            <div class="loader" id="spider-loader"></div>
                     <div id="myDIV">
-                        <div id="employee_table">
+                    <div id="employee_table">
 
-                        </div>
-
+                    </div>
+                    
                         <div class="row">
                             <div class="col-lg-10 text-left">
                                 <p>Top Suppliers for this material in 2017</p>
@@ -117,7 +137,7 @@
                                     <img src="img/jabil.png" alt="Avatar" style="width:100%">
                                     <div class="container">
                                         <h4><b>Jabil</b></h4>
-                                        <p>9 MM Revenue</p>
+                                        <p>10 MM Revenue</p>
                                     </div>
                                 </div>
                             </div>
@@ -154,10 +174,6 @@
             </div>
 
         </div>
-    </header>
-
-    <section id="about">
-        
     </section>
 
     <section id="services" style="background-color:#ffc400">
@@ -245,7 +261,7 @@
                     <div class="content">
                         <div class="alert">
                             <span class="closebtn" onclick="this.parentElement.style.display='none';">&times;</span>
-                            Sanmina Announces The Departure Of Bob Eulau And Appointment ... (PR Newswire 2 hours ago)
+                            This is an alert box.
                         </div>
                     </div>
                 </div>
@@ -253,7 +269,7 @@
                     <div class="content">
                         <div class="alert">
                             <span class="closebtn" onclick="this.parentElement.style.display='none';">&times;</span>
-                            Inpeco Recognized by Frost and Sullivan for Expertly Addressing ... (PR Newswire 1 hour ago)
+                            This is an alert box.
                         </div>
                     </div>
                 </div>
@@ -262,7 +278,7 @@
                     <div class="content">
                         <div class="alert">
                             <span class="closebtn" onclick="this.parentElement.style.display='none';">&times;</span>
-                            Jabil to take over 14 sites from Johnson ... (evertiq.com 4 hours ago)
+                            This is an alert box.
                         </div>
                     </div>
                 </div>
@@ -270,7 +286,7 @@
                     <div class="content">
                         <div class="alert">
                             <span class="closebtn" onclick="this.parentElement.style.display='none';">&times;</span>
-                            Randox Laboratories posts pre-tax losses of £10.8m ... (Irish Times 5 hours ago)
+                            This is an alert box.
                         </div>
                     </div>
                 </div>
@@ -278,7 +294,7 @@
                     <div class="content">
                         <div class="alert">
                             <span class="closebtn" onclick="this.parentElement.style.display='none';">&times;</span>
-                            Sanmina Corporation (NASDAQ:SANM) Shares in Focus: Looking at ... (Winslow Record 20 hours ago)
+                            This is an alert box.
                         </div>
                     </div>
                 </div>
@@ -287,7 +303,7 @@
                     <div class="content">
                         <div class="alert">
                             <span class="closebtn" onclick="this.parentElement.style.display='none';">&times;</span>
-                            Siemens Healthineers Showcases New In Vivo and In Vitro ... (Technology News 6 hours ago)
+                            This is an alert box.
                         </div>
                     </div>
                 </div>
@@ -295,7 +311,7 @@
                     <div class="content">
                         <div class="alert">
                             <span class="closebtn" onclick="this.parentElement.style.display='none';">&times;</span>
-                            INSIGHTEC Receives FDA Approval for Exablate Neuro Compatibility ... (CNB 9 hours ago)
+                            This is an alert box.
                         </div>
                     </div>
                 </div>
@@ -303,7 +319,7 @@
                     <div class="content">
                         <div class="alert">
                             <span class="closebtn" onclick="this.parentElement.style.display='none';">&times;</span>
-                            US STOCKS ON THE MOVE-Facebook, automakers, XO Group, Jabil ... (Nasdaq yesterday)
+                            This is an alert box.
                         </div>
                     </div>
                 </div>
@@ -330,50 +346,34 @@
     <!-- Custom scripts for this template -->
     <script src="{{ url_for('static', filename='js/creative.min.js') }}"></script>
     <script>
-        var delayInMilliseconds = 3000;
         $(document).ready(function() {
-            $('#load_data').click(function() {          
-                var x = $('#name').val()
-                  var y = document.getElementById("spider-loader");
-                  y.style.display = "block";
+            $('#load_data').click(function() {
                 $.ajax({
-                     async: false,
-                     type: 'GET',
-                     url: "http://localhost:5000/materials?name="+x,
-                     success: function() {
-                          var z = document.getElementById("spider-loader");
-                          z.style.display = "none";
-                          $.ajax({
-                             url: "{{ url_for('static', filename='SPIDER.csv') }}",
-                             dataType: "text",
-                             success: function(data) {
-                                    var employee_data = data.split(/\r?\n|\r/);
-                                    var table_data = '<table class="table table-bordered table-striped">';
-                                    for (var count = 0; count < employee_data.length; count++) {
-                                        var cell_data = employee_data[count].split(",");
-                                        table_data += '<tr>';
-                                        for (var cell_count = 0; cell_count < cell_data.length; cell_count++) {
-                                            if (count === 0) {
-                                                table_data += '<th>' + cell_data[cell_count] + '</th>';
-                                            } else {
-                                                table_data += '<td>' + cell_data[cell_count] + '</td>';
-                                            }
-                                        }
-                                        table_data += '</tr>';
-                                    }
-                                    table_data += '</table>';
-                                    $('#employee_table').html(table_data);
-                                    }
-                                    });
-                                    }
+                    url: "{{ url_for('static', filename='employee.csv') }}",
+                    dataType: "text",
+                    success: function(data) {
+                        var employee_data = data.split(/\r?\n|\r/);
+                        var table_data = '<table class="table table-bordered table-striped">';
+                        for (var count = 0; count < employee_data.length; count++) {
+                            var cell_data = employee_data[count].split(",");
+                            table_data += '<tr>';
+                            for (var cell_count = 0; cell_count < cell_data.length; cell_count++) {
+                                if (count === 0) {
+                                    table_data += '<th>' + cell_data[cell_count] + '</th>';
+                                } else {
+                                    table_data += '<td>' + cell_data[cell_count] + '</td>';
+                                }
+                            }
+                            table_data += '</tr>';
+                        }
+                        table_data += '</table>';
+                        $('#employee_table').html(table_data);
+                    }
                 });
-                })
-                })           
-                                    
+            });
+
+        });
     </script>
-    <script type="text/html" id="appendTemplate">
-        <div class="chip">John Doe</div>
-</script>
 
 
 </body>

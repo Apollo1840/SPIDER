@@ -512,27 +512,8 @@ form .row:first-child .floating-label-form-group {
     width: auto
 }
 
-#services {
-    background-color: #ffc400;
-}
 
-#portfolio {
-    background-color: #ffc400;
-}
 
-.design {
-    position: relative;
-    height: 100px;
-}
-
-.design img {
-    margin: 0 auto;
-    position: absolute;
-    left: 0;
-    right: 0;
-    width: 100%;
-    max-width: 440px;
-}
 
 .bounce-in-top {
     text-align: left;
@@ -647,7 +628,7 @@ form .row:first-child .floating-label-form-group {
 
 .typer,
 .type-once {
-    color: #099;
+    color: #000;
     font-family: sans-serif;
     font-weight: normal;
 
@@ -665,86 +646,140 @@ pre {
     line-height: 1.6;
 }
 
-.mouse-icon {
-    border: 2px solid #ffc400;
-    border-radius: 16px;
-    display: block;
+
+.chip {
+    display: inline-block;
+    margin: 25px 10px;
+    padding: 0px 25px;
     height: 50px;
-    margin: -100px auto 50px;
+    font-size: 16px;
+    line-height: 50px;
+    border-radius: 25px;
+    background-color: #f1f1f1;
+}
+
+.chip img {
+    float: left;
+    margin: 0 10px 0 -25px;
+    height: 50px;
+    width: 50px;
+    border-radius: 50%;
+}
+
+
+/* The alert message box */
+.alert {
+    padding: 20px;
+    background-color: #099; /* Red */
+    color: black;
+    margin-bottom: 15px;
+}
+
+/* The close button */
+
+
+
+/* On mouse-over, add a deeper shadow */
+.card:hover {
+    box-shadow: 0 8px 16px 0 rgba(0,0,0,0.2);
+}
+
+/* Add some padding inside the card container */
+.container {
+    padding: 2px 16px;
+}
+
+.card {
+    box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2);
+    transition: 0.3s;
+    border-radius: 5px; /* 5px rounded corners */
+}
+
+/* Add rounded corners to the top left and the top right corner of the image */
+img {
+    border-radius: 5px 5px 0 0;
+}
+
+.column {
+    float: left;
+    width: 33.33%;
+    display: none; /* Hide columns by default */
+}
+
+/* Clear floats after rows */ 
+.row:after {
+    content: "";
+    display: table;
+    clear: both;
+}
+
+/* Content */
+.content {
+    background-color: white;
+    padding: 10px;
+}
+
+/* The "show" class is added to the filtered elements */
+.show {
+    display: block;
+}
+
+
+#myDIV{
+    display:none
+}
+
+.chip {
+    display: inline-block;
+    padding: 0 25px;
+    height: 50px;
+    font-size: 16px;
+    line-height: 50px;
+    border-radius: 25px;
+    background-color: #f1f1f1;
+}
+
+.chip img {
+    float: left;
+    margin: 0 10px 0 -25px;
+    height: 50px;
+    width: 50px;
+    border-radius: 50%;
+}
+.closebtn {
+    padding-left: 10px;
+    color: #000;
+    font-weight: bold;
+    float: right;
+    font-size: 20px;
+    cursor: pointer;
+}
+
+.closebtn:hover {
+    color: #000;
+}
+
+.loader {
     position: relative;
-    width: 30px;
-    z-index: 10;
+  left: 50%;
+  top: 50%;
+  z-index: 1;
+  width: 150px;
+  height: 150px;
+  margin: -75px 0 0 -75px;
+  border: 16px solid #099;
+  border-radius: 50%;
+  border-top: 16px solid #ec6602;
+  width: 120px;
+  height: 120px;
+  -webkit-animation: spin 2s linear infinite;
+  animation: spin 2s linear infinite;
+    display:none;
+    
 }
 
-.mouse-icon .scroll {
-    animation-delay: 0s;
-    animation-duration: 1s;
-    animation-iteration-count: infinite;
-    animation-name: scrolling;
-    animation-play-state: running;
-    animation-timing-function: linear;
+@keyframes spin {
+    0% { transform: rotate(0deg); }
+    100% { transform: rotate(360deg); }
 }
-
-.mouse-icon .scroll {
-    background: #ffc400 none repeat scroll 0 0;
-    border-radius: 10px;
-    height: 10px;
-    margin-left: auto;
-    margin-right: auto;
-    position: relative;
-    top: 4px;
-    width: 4px;
-}
-
-@keyframes scrolling {
-    0% {
-        opacity: 0;
-        top: 5px;
-    }
-    30% {
-        opacity: 1;
-        top: 10px;
-    }
-    100% {
-        opacity: 0;
-        top: 25px;
-    }
-}
-
-
-
-.text-accent-color {
-    color: #ffc400 !important
-}
-
-
-
-#video-landing video {
-    width: 100%;
-    position: absolute;
-    z-index: -100;
-}
-
-@media(min-width:992px) {
-    .about-text {
-        color: white;
-        line-height: 3;
-        text-align: right;
-    }
-}
-
-@media(max-width:991px) {
-    .about-text {
-        text-align: center;
-        line-height: 1.5;
-    }
-}
-
-
-@media(min-width:992px) {
-    .small-picture {
-        display: none;
-    }
-}
-
 

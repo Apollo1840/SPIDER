@@ -285,15 +285,18 @@ class ThomasnetCrawler():
         
         
         self.df = df
-        print(df)
-        df.to_csv('/data/SPIDER_{}.csv'.format(material))
+        #df.to_csv('data/SPIDER_{}.csv'.format(material))
+        df.to_csv('static/SPIDER.csv'.format(material))
+        csv_refiner('static/SPIDER.csv'.format(material))
         return df
 
 
 def csv_refiner(path):
     df=pd.read_csv(path)
+    df.name = df.name.str.replace(',',' ')
     del df['material']
     del df['year_founded']
+    df=df.drop(df.columns[0:1], axis = 1)
     df.to_csv(path)
     
     
@@ -323,14 +326,17 @@ if __name__ == '__main__':
     
     tc = ThomasnetCrawler()
     # tc.run('metal')
-    df = tc.run('plastics', number_suppliers=10)
+    df = tc.run('machined aluminum', number_suppliers=10)
     
     #df = tc.run('chemicals', number_suppliers=4)
     
-    # csv_refiner(r'data/SPIDER_metal.csv')
+    # csv_refiner(r'data/SPIDER_machined_aluminum.csv')
     # csv_refiner(r'data/SPIDER_plastics.csv')
     # csv_refiner(r'data/SPIDER_chemicals.csv')
 
+    
+    # df2.to_csv(r'data/SPIDER_machined_aluminum.csv')
+    
     
 
     

@@ -9,6 +9,8 @@ from flask import Flask
 from flask import request
 from flask import render_template
 
+from SPIDER_crawler import ThomasnetCrawler
+
 app = Flask(__name__)
 
 @app.route('/')
@@ -18,11 +20,23 @@ def home():
 @app.route('/', methods=['POST'])
 def my_form_post():
     text1 = request.form['text1']
-    text2 = request.form['text2']
-    if text1 == text2 :
-        return "<h1>Plagiarism Detected !</h1>"
-    else :
-        return "<h1>No Plagiarism Detected !</h1>"
+    text = str(text1)
+    
+    tc = ThomasnetCrawler()
+    df = tc.run(text, number_suppliers=2)
+    
+    html = "<ul>"
+    for i in df.name:
+       html += "<li>{}</li>".format(i)
+    html += "</ul>"
+    
+    
+    print(text.upper())
+    
+    return html
+
 
 if __name__ == '__main__':
     app.run()
+
+
