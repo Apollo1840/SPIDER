@@ -288,6 +288,7 @@ class ThomasnetCrawler():
         #df.to_csv('data/SPIDER_{}.csv'.format(material))
         df.to_csv('static/SPIDER.csv'.format(material))
         csv_refiner('static/SPIDER.csv'.format(material))
+        print('data saved')
         return df
 
 

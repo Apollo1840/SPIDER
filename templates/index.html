@@ -35,7 +35,9 @@
     <!-- Navigation -->
     <nav class="navbar navbar-expand-lg navbar-light fixed-top" id="mainNav">
         <div class="container">
-            <a class="navbar-brand js-scroll-trigger" href="#page-top"><img class="img-logo" src="img/logo.png" alt="logo"><img class="img-logo" src="img/spider.png" style="margin-left: 50px" alt="logo"></a>
+            <a class="navbar-brand js-scroll-trigger" href="#page-top">
+            <img class="img-logo" src="{{ url_for('static', filename='img/logo.png') }}" alt="logo">
+            <img class="img-logo" src="{{ url_for('static', filename='img/spider.png') }}" style="margin-left: 50px" alt="logo"></a>
             <button class="navbar-toggler navbar-toggler-right" type="button" data-toggle="collapse" data-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
                 <span class="navbar-toggler-icon"></span>
             </button>
@@ -91,64 +93,17 @@
                         </div>
                     
                 </div>
-                <div class="col-lg-8 mx-auto">
-
-                </div>
+                <div class="col-lg-8 mx-auto"></div>
+                
                 <div class="col-lg-8 mx-auto">
                     <br />
                     <div align="center">
-                        <button type="button" name="load_data" onclick="myFunction()" id="load_data" class="btn btn-primary btn-xl" style="border-radius: 5px">Load Data</button>
+                        <button type="button" name="load_data" id="load_data" class="btn btn-primary btn-xl" style="border-radius: 5px">Load Data</button>
                     </div>
                     <br />
                             <div class="loader" id="spider-loader"></div>
                     <div id="myDIV">
-                        <div id="employee_table">
-
-                        </div>
-
-                        <div class="row">
-                            <div class="col-lg-10 text-left">
-                                <p>Top Suppliers for this material in 2017</p>
-                            </div>
-                        </div>
-                        <div class="row">
-                            <div class="col-lg-3">
-                                <div class="card">
-                                    <img src="img/jabil.png" alt="Avatar" style="width:100%">
-                                    <div class="container">
-                                        <h4><b>Jabil</b></h4>
-                                        <p>9 MM Revenue</p>
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="col-lg-3">
-                                <div class="card">
-                                    <img src="img/inpeco.png" alt="Avatar" style="width:100%">
-                                    <div class="container">
-                                        <h4><b>Inpeco</b></h4>
-                                        <p>5 MM Revenue</p>
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="col-lg-3">
-                                <div class="card">
-                                    <img src="img/randox.png" alt="Avatar" style="width:100%">
-                                    <div class="container">
-                                        <h4><b>Randox</b></h4>
-                                        <p>2 MM revenue</p>
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="col-lg-3">
-                                <div class="card">
-                                    <img src="img/sanmina.png" alt="Avatar" style="width:100%">
-                                    <div class="container">
-                                        <h4><b>Sanmina</b></h4>
-                                        <p>1 MM revenue</p>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
+                        <div id="employee_table"></div>
                     </div>
                 </div>
             </div>
@@ -334,17 +289,13 @@
         $(document).ready(function() {
             $('#load_data').click(function() {          
                 var x = $('#name').val()
-                  var y = document.getElementById("spider-loader");
-                  y.style.display = "block";
                 $.ajax({
                      async: false,
                      type: 'GET',
                      url: "http://localhost:5000/materials?name="+x,
                      success: function() {
-                          var z = document.getElementById("spider-loader");
-                          z.style.display = "none";
                           $.ajax({
-                             url: "{{ url_for('static', filename='SPIDER.csv') }}",
+                             url: "SPIDER.csv",
                              dataType: "text",
                              success: function(data) {
                                     var employee_data = data.split(/\r?\n|\r/);

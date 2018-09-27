@@ -27,6 +27,7 @@ def api_hello():
         print('scraping...')
         tc = ThomasnetCrawler()
         tc.run(request.args['name'], number_suppliers=3)
+        print('finished.')
         return 'success'
     else:
         return 'Invalid arguments'
