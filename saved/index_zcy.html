@@ -92,11 +92,13 @@
             </div>
             <div class="row">
                 <div class="col-lg-8 mx-auto">
+                    <form name="sentMessage" id="contactForm" novalidate="novalidate">
                         <div class="control-group">
                             <div class="form-group floating-label-form-group controls mb-0 pb-2">
                                 <label>Which material are you looking for?</label>
                                 <form method="POST">
-                                    <input name="mname" type="text" class="form-control" id="name" placeholder="Which material are you looking for?" required="required" data-validation-required-message="Please enter your name.">                        
+                                    <input name="mname" type="text" class="form-control" id="name" placeholder="Which material are you looking for?" required="required" data-validation-required-message="Please enter your name.">
+                                    <input type="submit" value="Click Me !">
                                 </form>
                                 <p class="help-block text-danger"></p>
                             </div>
@@ -111,7 +113,7 @@
                             </div>
 
                         </div>
-                    
+                    </form>
                 </div>
                 <div class="col-lg-8 mx-auto">
                     <br />
@@ -346,38 +348,28 @@
     <script>
         $(document).ready(function() {
             $('#load_data').click(function() {
-                var x = $('#name').val()
                 $.ajax({
-                     async: false,
-                     type: 'GET',
-                     url: "http://localhost:5000/materials?name="+x,
-                     success: function() {
-                          $.ajax({
-                             url: "{{ url_for('static', filename='employee.csv') }}",
-                             dataType: "text",
-                             success: function(data) {
-                                    var employee_data = data.split(/\r?\n|\r/);
-                                    var table_data = '<table class="table table-bordered table-striped">';
-                                    for (var count = 0; count < employee_data.length; count++) {
-                                        var cell_data = employee_data[count].split(",");
-                                        table_data += '<tr>';
-                                        for (var cell_count = 0; cell_count < cell_data.length; cell_count++) {
-                                            if (count === 0) {
-                                                table_data += '<th>' + cell_data[cell_count] + '</th>';
-                                            } else {
-                                                table_data += '<td>' + cell_data[cell_count] + '</td>';
-                                            }
-                                        }
-                                        table_data += '</tr>';
-                                    }
-                                    table_data += '</table>';
-                                    $('#employee_table').html(table_data);
+                    url: "{{ url_for('static', filename='employee.csv') }}",
+                    dataType: "text",
+                    success: function(data) {
+                        var employee_data = data.split(/\r?\n|\r/);
+                        var table_data = '<table class="table table-bordered table-striped">';
+                        for (var count = 0; count < employee_data.length; count++) {
+                            var cell_data = employee_data[count].split(",");
+                            table_data += '<tr>';
+                            for (var cell_count = 0; cell_count < cell_data.length; cell_count++) {
+                                if (count === 0) {
+                                    table_data += '<th>' + cell_data[cell_count] + '</th>';
+                                } else {
+                                    table_data += '<td>' + cell_data[cell_count] + '</td>';
+                                }
                             }
-                            });
-                         }
-                       })
-                
-               
+                            table_data += '</tr>';
+                        }
+                        table_data += '</table>';
+                        $('#employee_table').html(table_data);
+                    }
+                });
             });
 
         });
