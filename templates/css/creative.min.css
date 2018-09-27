@@ -628,7 +628,7 @@ form .row:first-child .floating-label-form-group {
 
 .typer,
 .type-once {
-    color: #099;
+    color: #000;
     font-family: sans-serif;
     font-weight: normal;
 
@@ -676,21 +676,7 @@ pre {
 }
 
 /* The close button */
-.closebtn {
-    margin-left: 15px;
-    color: black;
-    font-weight: bold;
-    float: right;
-    font-size: 22px;
-    line-height: 20px;
-    cursor: pointer;
-    transition: 0.3s;
-}
 
-/* When moving the mouse over the close button */
-.closebtn:hover {
-    color: black;
-}
 
 
 /* On mouse-over, add a deeper shadow */
@@ -741,5 +727,59 @@ img {
 
 #myDIV{
     display:none
+}
+
+.chip {
+    display: inline-block;
+    padding: 0 25px;
+    height: 50px;
+    font-size: 16px;
+    line-height: 50px;
+    border-radius: 25px;
+    background-color: #f1f1f1;
+}
+
+.chip img {
+    float: left;
+    margin: 0 10px 0 -25px;
+    height: 50px;
+    width: 50px;
+    border-radius: 50%;
+}
+.closebtn {
+    padding-left: 10px;
+    color: #000;
+    font-weight: bold;
+    float: right;
+    font-size: 20px;
+    cursor: pointer;
+}
+
+.closebtn:hover {
+    color: #000;
+}
+
+.loader {
+    position: relative;
+  left: 50%;
+  top: 50%;
+  z-index: 1;
+  width: 150px;
+  height: 150px;
+  margin: -75px 0 0 -75px;
+  border: 16px solid #099;
+  border-radius: 50%;
+  border-top: 16px solid #ec6602;
+  width: 120px;
+  height: 120px;
+  -webkit-animation: spin 2s linear infinite;
+  animation: spin 2s linear infinite;
+    display:none;
+    
+}
+
+@keyframes spin {
+    0% { transform: rotate(0deg); }
+    100% { transform: rotate(360deg); }
 }
 
