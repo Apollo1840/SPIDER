@@ -10,8 +10,11 @@ from flask import render_template
 from flask import request
 import time
 
+<<<<<<< HEAD
 from SPIDER_crawler import ThomasnetCrawler
 
+=======
+>>>>>>> parent of 0104863... real real success
 app = Flask(__name__)
 
 @app.route('/')
@@ -29,6 +32,7 @@ def my_form_post():
 @app.route('/materials')
 def api_hello():
     if 'name' in request.args:
+<<<<<<< HEAD
     	 #with open('file.txt', 'w') as f:
     	 #f.write(str.upper(request.args['name']) + '\n')
         print('scraping...')
@@ -36,6 +40,13 @@ def api_hello():
         tc.run(request.args['name'], number_suppliers=3)
         print('finished.')
         return 'success'
+=======
+    	#with open('file.txt', 'w') as f:
+    		#f.write(str.upper(request.args['name']) + '\n')
+        print(str.upper(request.args['name']))
+        time.sleep(10)
+        return str.upper(request.args['name'])
+>>>>>>> parent of 0104863... real real success
     else:
         return 'Invalid arguments'
    
