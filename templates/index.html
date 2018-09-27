@@ -97,58 +97,11 @@
                 <div class="col-lg-8 mx-auto">
                     <br />
                     <div align="center">
-                        <button type="button" name="load_data" onclick="myFunction()" id="load_data" class="btn btn-primary btn-xl" style="border-radius: 5px">Load Data</button>
+                        <button type="button" name="load_data" id="load_data" class="btn btn-primary btn-xl" style="border-radius: 5px">Load Data</button>
                     </div>
                     <br />
                             <div class="loader" id="spider-loader"></div>
-                    <div id="myDIV">
                         <div id="employee_table">
-
-                        </div>
-
-                        <div class="row">
-                            <div class="col-lg-10 text-left">
-                                <p>Top Suppliers for this material in 2017</p>
-                            </div>
-                        </div>
-                        <div class="row">
-                            <div class="col-lg-3">
-                                <div class="card">
-                                    <img src="img/jabil.png" alt="Avatar" style="width:100%">
-                                    <div class="container">
-                                        <h4><b>Jabil</b></h4>
-                                        <p>9 MM Revenue</p>
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="col-lg-3">
-                                <div class="card">
-                                    <img src="img/inpeco.png" alt="Avatar" style="width:100%">
-                                    <div class="container">
-                                        <h4><b>Inpeco</b></h4>
-                                        <p>5 MM Revenue</p>
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="col-lg-3">
-                                <div class="card">
-                                    <img src="img/randox.png" alt="Avatar" style="width:100%">
-                                    <div class="container">
-                                        <h4><b>Randox</b></h4>
-                                        <p>2 MM revenue</p>
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="col-lg-3">
-                                <div class="card">
-                                    <img src="img/sanmina.png" alt="Avatar" style="width:100%">
-                                    <div class="container">
-                                        <h4><b>Sanmina</b></h4>
-                                        <p>1 MM revenue</p>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
                     </div>
                 </div>
             </div>
@@ -330,20 +283,20 @@
     <!-- Custom scripts for this template -->
     <script src="{{ url_for('static', filename='js/creative.min.js') }}"></script>
     <script>
+        $.ajaxSetup({ cache: false });
         var delayInMilliseconds = 3000;
         $(document).ready(function() {
-            $('#load_data').click(function() {          
-                var x = $('#name').val()
-                  var y = document.getElementById("spider-loader");
-                  y.style.display = "block";
+            $('#load_data').click(function() {
+                var x = $('#name').val(); 
+                  //var y = document.getElementById("spider-loader");
+                  //y.style.display = "block";
                 $.ajax({
                      async: false,
                      type: 'GET',
                      url: "http://localhost:5000/materials?name="+x,
                      success: function() {
-                          var z = document.getElementById("spider-loader");
-                          z.style.display = "none";
-                          $.ajax({
+                                                   $.ajax({
+                              cache: false,
                              url: "{{ url_for('static', filename='SPIDER.csv') }}",
                              dataType: "text",
                              success: function(data) {
@@ -365,11 +318,14 @@
                                     $('#employee_table').html(table_data);
                                     }
                                     });
-                                    }
+                         //console.log(document.getElementById("load-data"));
+                         //document.getElementById("load-data").trigger("click");
+                     }
                 });
-                })
-                })           
-                                    
+                          //var z = document.getElementById("spider-loader");
+                          //z.style.display = "none";
+                });
+                });
     </script>
     <script type="text/html" id="appendTemplate">
         <div class="chip">John Doe</div>
