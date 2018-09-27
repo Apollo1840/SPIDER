@@ -287,14 +287,11 @@ class ThomasnetCrawler():
         self.df = df
         print(df)
         #df.to_csv('data/SPIDER_{}.csv'.format(material))
-<<<<<<< HEAD
-        df.to_csv('static/SPIDER.csv'.format(material))
-        csv_refiner('static/SPIDER.csv'.format(material))
+        
+        df.to_csv('static/SPIDER.csv')
+        csv_refiner('static/SPIDER.csv')
         print('data saved')
-=======
-        df.to_csv('data/SPIDER_{}.csv'.format(material))
-        csv_refiner('data/SPIDER_{}.csv'.format(material))
->>>>>>> parent of 0104863... real real success
+
         return df
 
 
