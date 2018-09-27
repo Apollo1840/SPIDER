@@ -285,19 +285,24 @@ class ThomasnetCrawler():
         
         
         self.df = df
+        print(df)
         #df.to_csv('data/SPIDER_{}.csv'.format(material))
+<<<<<<< HEAD
         df.to_csv('static/SPIDER.csv'.format(material))
         csv_refiner('static/SPIDER.csv'.format(material))
         print('data saved')
+=======
+        df.to_csv('data/SPIDER_{}.csv'.format(material))
+        csv_refiner('data/SPIDER_{}.csv'.format(material))
+>>>>>>> parent of 0104863... real real success
         return df
 
 
 def csv_refiner(path):
     df=pd.read_csv(path)
-    df.name = df.name.str.replace(',',' ')
     del df['material']
     del df['year_founded']
-    df=df.drop(df.columns[0:1], axis = 1)
+    df=df.drop(df.columns[0:2], axis = 1)
     df.to_csv(path)
     
     
