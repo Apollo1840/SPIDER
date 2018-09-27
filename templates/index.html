@@ -340,11 +340,15 @@
         $(document).ready(function() {
             $('#load_data').click(function() {          
                 var x = $('#name').val()
+                  var y = document.getElementById("spider-loader");
+                  y.style.display = "block";
                 $.ajax({
                      async: false,
                      type: 'GET',
                      url: "http://localhost:5000/materials?name="+x,
                      success: function() {
+                          var z = document.getElementById("spider-loader");
+                          z.style.display = "none";
                           $.ajax({
                              url: "{{ url_for('static', filename='SPIDER.csv') }}",
                              dataType: "text",
