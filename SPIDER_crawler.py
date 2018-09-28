@@ -298,8 +298,10 @@ def csv_refiner(path):
     df=pd.read_csv(path)
     del df['material']
     del df['year_founded']
-    df=df.drop(df.columns[0:2], axis = 1)
+    df.name = df.name.str.replace(',',' ')
+    df=df.drop(df.columns[0:1], axis = 1)
     df.to_csv(path)
+    
     
     
 

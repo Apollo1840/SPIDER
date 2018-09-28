@@ -108,8 +108,9 @@
                     </div>
                     <br />
                             <div class="loader" id="spider-loader"></div>
-                    <div id="myDIV">
-                        <div id="employee_table"></div>
+
+                        <div id="employee_table">
+
                     </div>
                 </div>
             </div>
@@ -291,6 +292,7 @@ SPIDER
     <!-- Custom scripts for this template -->
     <script src="{{ url_for('static', filename='js/creative.min.js') }}"></script>
     <script>
+        $.ajaxSetup({ cache: false });
         var delayInMilliseconds = 3000;
         $(document).ready(function() {
             $('#load_data').click(function() {          
@@ -300,10 +302,11 @@ SPIDER
                      type: 'GET',
                      url: "http://localhost:5000/materials?name="+x,
                      success: function() {
-                          $.ajax({
-                             url: "{{ url_for('static', filename='.csv') }}",
-                             dataType: "text",
-                             success: function(data) {
+                            $.ajax({
+                              cache: false,
+                              url: "{{ url_for('static', filename='SPIDER.csv') }}",
+                              dataType: "text",
+                              success: function(data) {
                                     var employee_data = data.split(/\r?\n|\r/);
                                     var table_data = '<table class="table table-bordered table-striped">';
                                     for (var count = 0; count < employee_data.length; count++) {
@@ -322,11 +325,14 @@ SPIDER
                                     $('#employee_table').html(table_data);
                                     }
                                     });
-                                    }
+                         //console.log(document.getElementById("load-data"));
+                         //document.getElementById("load-data").trigger("click");
+                     }
                 });
-                })
-                })           
-                                    
+                          //var z = document.getElementById("spider-loader");
+                          //z.style.display = "none";
+                });
+                });
     </script>
     <script type="text/html" id="appendTemplate">
         <div class="chip">John Doe</div>
