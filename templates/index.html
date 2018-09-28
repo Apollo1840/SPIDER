@@ -288,8 +288,7 @@
         $(document).ready(function() {
             $('#load_data').click(function() {
                 var x = $('#name').val(); 
-                  //var y = document.getElementById("spider-loader");
-                  //y.style.display = "block";
+                  document.getElementById("spider-loader").style.display = "block";
                 $.ajax({
                      async: false,
                      type: 'GET',
@@ -318,12 +317,9 @@
                                     $('#employee_table').html(table_data);
                                     }
                                     });
-                         //console.log(document.getElementById("load-data"));
-                         //document.getElementById("load-data").trigger("click");
                      }
                 });
-                          //var z = document.getElementById("spider-loader");
-                          //z.style.display = "none";
+                          document.getElementById("spider-loader").style.display = "none";
                 });
                 });
     </script>
