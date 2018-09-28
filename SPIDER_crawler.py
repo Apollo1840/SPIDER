@@ -7,8 +7,9 @@ Created on Mon Sep 24 15:12:05 2018
 
 from bc2 import BasicCrawler
 import pandas as pd
-
+import math
 import time
+import random
 
 import re
 
@@ -299,6 +300,8 @@ def csv_refiner(path):
     del df['material']
     del df['year_founded']
     df.name = df.name.str.replace(',',' ')
+    df['score'] = pd.Series(df.index).apply(lambda x: round(100*math.exp(-1*((x+random.random())/10))))
+
     df=df.drop(df.columns[0:1], axis = 1)
     df.to_csv(path)
     
@@ -330,7 +333,7 @@ if __name__ == '__main__':
     
     tc = ThomasnetCrawler()
     # tc.run('metal')
-    df = tc.run('machined aluminum', number_suppliers=10)
+    df = tc.run('machined aluminum', number_suppliers=3)
     
     #df = tc.run('chemicals', number_suppliers=4)
     
