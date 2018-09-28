@@ -12,11 +12,11 @@
 
     <!-- Bootstrap core CSS -->
     <link href="{{ url_for('static', filename='vendor/bootstrap/css/bootstrap.min.css') }}" rel="stylesheet">
-    
+
 
     <!-- Custom fonts for this template -->
     <link href="{{ url_for('static', filename='vendor/fontawesome-free-5.3.1-web/css/all.min.css') }}" rel="stylesheet">
-    
+
     <link href="https://fonts.googleapis.com/css?family=Roboto:300" rel="stylesheet">
     <link href='https://fonts.googleapis.com/css?family=Open+Sans:300italic,400italic,600italic,700italic,800italic,400,300,600,700,800' rel='stylesheet' type='text/css'>
     <link href='https://fonts.googleapis.com/css?family=Merriweather:400,300,300italic,400italic,700,700italic,900,900italic' rel='stylesheet' type='text/css'>
@@ -80,7 +80,7 @@
                     </div>
                     <br />
                     <div class="loader" id="spider-loader"></div>
-                        <div id="employee_table">
+                    <div id="employee_table">
 
                     </div>
                 </div>
@@ -290,19 +290,19 @@
                             for (var cell_count = 0; cell_count < cell_data.length; cell_count++) {
                                 if(count === 0){
                                    if(cell_count === 1){
-                                       table_data += '<th align="center">' + cell_data[cell_count] + '</th>';
+                                       table_data += '<th align="center" style="background-color:#ec6602">name</th>';
                                    } 
                                     else if(cell_count === 2){
-                                       table_data += '<th align="center">' + cell_data[cell_count] + '</th>';
+                                       table_data += '<th align="center" style="background-color:#ec6602">website</th>';
                                    } else if(cell_count === 3){
-                                       table_data += '<th align="center">' + cell_data[cell_count] + '</th>';
+                                       table_data += '<th align="center" style="background-color:#ec6602">revenue</th>';
                                    } else if(cell_count === 4){
-                                       table_data += '<th align="center">#employees</th>';
+                                       table_data += '<th align="center" style="background-color:#ec6602">#employees</th>';
                                    } else if(cell_count === 5){
-                                       table_data += '<th align="center">' + cell_data[cell_count] + '</th>';
+                                       table_data += '<th align="center" style="background-color:#ec6602">' + cell_data[cell_count] + '</th>';
                                    } 
                                     else{
-                                        table_data += '<th align="center">' + cell_data[cell_count] + '</th>';
+                                        table_data += '<th align="center" style="background-color:#ec6602">' + cell_data[cell_count] + '</th>';
                                     }
                                 }
                                 else if (cell_count === 0) {

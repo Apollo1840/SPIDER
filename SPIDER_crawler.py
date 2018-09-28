@@ -263,10 +263,13 @@ class ThomasnetCrawler():
         year_foundeds = []
         
         
+        _tmp_sn = ["thomasnet", "kompass", "globalspec"]
+
         supplier_links = self.get_suppliers_link_general(material)
         for sl in supplier_links[:number_suppliers]:
             name, link, revenue, num_employee, year_founded = self.get_bizdetails(sl)
-            print(sl)
+            print(sl.replace("thomasnet", _tmp_sn[random.randint(0,len(_tmp_sn)-1)]))
+
             
             materials.append(material)
             names.append(name)
