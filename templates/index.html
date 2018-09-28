@@ -89,7 +89,7 @@
         </div>
     </section>
 
-    <section id="services" style="background-color:#ffc400">
+    <section id="services" style="background-color:rgb(255,210,0)">
         <div class="container">
             <div class="row">
                 <div class="col-lg-12 text-center">
@@ -283,18 +283,19 @@
                              success: function(data) {
                                     var employee_data = data.split(/\r?\n|\r/);
                                     var table_data = '<table class="table table-bordered table-striped">';
-                                    for (var count = 0; count < employee_data.length; count++) {
-                                        var cell_data = employee_data[count].split(",");
-                                        table_data += '<tr>';
-                                        for (var cell_count = 0; cell_count < cell_data.length; cell_count++) {
+                                    for (var cell_count = 0; cell_count < cell_data.length; cell_count++) {
                                             if (count === 0) {
                                                 table_data += '<th>' + cell_data[cell_count] + '</th>';
                                             } else {
+                                                if (cell_count === 2){
+                                                var cd = cell_data[cell_count]
+                                                var linktd = '<td>' + '<a target="_blank" href=' + cd + '>' + cd + '</a>' + '</td>'
+                                                table_data += linktd
+                                                } else {
                                                 table_data += '<td>' + cell_data[cell_count] + '</td>';
+                                                }    
                                             }
                                         }
-                                        table_data += '</tr>';
-                                    }
                                     table_data += '</table>';
                                     $('#employee_table').html(table_data);
                                     }
