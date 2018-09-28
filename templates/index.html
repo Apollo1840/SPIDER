@@ -258,7 +258,7 @@
 
     <!-- Custom scripts for this template -->
     <script src="{{ url_for('static', filename='js/creative.min.js') }}"></script>
-    <script>
+<script>
         $.ajaxSetup({ cache: false });
         var delayInMilliseconds = 3000;
         $(document).ready(function() {
@@ -283,25 +283,55 @@
                              success: function(data) {
                                     var employee_data = data.split(/\r?\n|\r/);
                                     var table_data = '<table class="table table-bordered table-striped">';
-for (var count = 0; count < employee_data.length; count++) {
+                            for (var count = 0; count < employee_data.length; count++) {
                             var cell_data = employee_data[count].split(",");
                             table_data += '<tr>';
                             
                             for (var cell_count = 0; cell_count < cell_data.length; cell_count++) {
-                                if (cell_count === 0) {
+                                if(count === 0){
+                                   if(cell_count === 1){
+                                       table_data += '<th align="center">' + cell_data[cell_count] + '</th>';
+                                   } 
+                                    else if(cell_count === 2){
+                                       table_data += '<th align="center">' + cell_data[cell_count] + '</th>';
+                                   } else if(cell_count === 3){
+                                       table_data += '<th align="center">' + cell_data[cell_count] + '</th>';
+                                   } else if(cell_count === 4){
+                                       table_data += '<th align="center">#employees</th>';
+                                   } else if(cell_count === 5){
+                                       table_data += '<th align="center">' + cell_data[cell_count] + '</th>';
+                                   } 
+                                    else{
+                                        table_data += '<th align="center">' + cell_data[cell_count] + '</th>';
+                                    }
+                                }
+                                else if (cell_count === 0) {
                                     table_data += '<th>' + cell_data[cell_count] + '</th>';
                                 } 
+                                else if (cell_count === 2){
+                                               var cd = cell_data[cell_count]
+                                               var linktd = '<td>' + '<a target="_blank" href=' + cd + '>' + cd + '</a>' + '</td>'
+                                               table_data += linktd
+                                               }
                                 else if(cell_count === 5){
                                                    var cd = cell_data[cell_count]
                                                    console.log(cd)
                                                    if(cd>=90){
-                                                       var linktd = '<td style="color:green">' + cd + '</td>'
+                                                       var linktd = '<td style="background-color:#7cb342;font-weight:bold">' + cd + '</td>'
                                                        table_data += linktd
                                                    }
                                                    else if(cd>=80){
-                                                       var linktd = '<td style="color:orange">' + cd + '</td>'
+                                                       var linktd = '<td style="background-color:rgb(255,210,0);font-weight:bold">' + cd + '</td>'
                                                        table_data += linktd
                                                    }
+                                                    else if (cd>=60){
+                                                        var linktd = '<td style="background-color:#ffa000;font-weight:bold">' + cd + '</td>'
+                                                       table_data += linktd
+                                                    }
+                                    else if (cd>0){
+                                        var linktd = '<td style="background-color:#ff5722;font-weight:bold">' + cd + '</td>'
+                                                       table_data += linktd
+                                    }
                                     
                                                    else{
                                                        var linktd = '<td style="color:black">' + cd + '</td>'
