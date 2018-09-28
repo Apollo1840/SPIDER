@@ -33,17 +33,17 @@
 <body id="page-top">
 
     <!-- Navigation -->
-    <header class="masthead" style="background-image:url({{ url_for('static', filename='img/navbar.png') }});background-size:100%;background-repeat:no-repeat">
+    <header style="background-image:url({{ url_for('static', filename='img/navbar.png') }});background-size:100%;background-repeat:no-repeat">
         <div class="container my-auto">
-            <div class="row" style="margin-top:250px">
+            <div class="row" style="margin-top:280px">
                 <div class="col-lg-10 mx-auto">
                     <h2 class="text-uppercase">
                         <strong>We are <span class="typer" data-typer-targets='{ "targets" : ["SIEMENS.","PROCUREMENT.", "DATA.", "EXTRACTION.", "ROBOT.","INTELLIGENT."]}'></span><br>Welcome to SPIDER.</strong>
                     </h2>
                 </div>
                 <div class="col-lg-10 mx-auto">
-                    <h2>we help you to find information about your supplier.
-                    </h2>
+                    <h3>we help you to find information about your supplier.
+                    </h3>
                 </div>
             </div>
         </div>
@@ -293,13 +293,10 @@
                                     $('#employee_table').html(table_data);
                                     }
                                     });
-                         //console.log(document.getElementById("load-data"));
-                         //document.getElementById("load-data").trigger("click");
                      }
                 });
-                          var z = document.getElementById("spider-loader");
-                          z.style.display = "none";
-                });
+                          document.getElementById("spider-loader").style.display = "none";
+              });
                 });
     </script>
     <script type="text/html" id="appendTemplate">
