@@ -316,7 +316,13 @@ SPIDER
                                             if (count === 0) {
                                                 table_data += '<th>' + cell_data[cell_count] + '</th>';
                                             } else {
+                                                if (cell_count === 2){
+                                                var cd = cell_data[cell_count]
+                                                var linktd = '<td>' + '<a target="_blank" href=' + cd + '>' + cd + '</a>' + '</td>'
+                                                table_data += linktd
+                                                } else{
                                                 table_data += '<td>' + cell_data[cell_count] + '</td>';
+                                                }    
                                             }
                                         }
                                         table_data += '</tr>';

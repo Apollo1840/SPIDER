@@ -297,6 +297,7 @@ class ThomasnetCrawler():
 
 def csv_refiner(path):
     df=pd.read_csv(path)
+    df.link = df.link.str.strip()
     del df['material']
     del df['year_founded']
     df.name = df.name.str.replace(',',' ')
