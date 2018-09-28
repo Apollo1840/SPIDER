@@ -33,82 +33,53 @@
 <body id="page-top">
 
     <!-- Navigation -->
-    <nav class="navbar navbar-expand-lg navbar-light fixed-top" id="mainNav">
-        <div class="container">
-            <a class="navbar-brand js-scroll-trigger" href="#page-top">
-            <img class="img-logo" src="{{ url_for('static', filename='img/logo.png') }}" alt="logo">
-            <img class="img-logo" src="{{ url_for('static', filename='img/spider.png') }}" style="margin-left: 50px" alt="logo"></a>
-            <button class="navbar-toggler navbar-toggler-right" type="button" data-toggle="collapse" data-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
-                <span class="navbar-toggler-icon"></span>
-            </button>
-            <div class="collapse navbar-collapse" id="navbarResponsive">
-                <ul class="navbar-nav ml-auto">
-                    <li class="nav-item">
-                        <a class="nav-link js-scroll-trigger" href="#about">Material</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link js-scroll-trigger" href="#services">Supplier</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link js-scroll-trigger" href="#portfolio">News</a>
-                    </li>
-                    <li class="nav-item dropdown">
-                        <a class="nav-link dropdown-toggle" href="#" id="navbarDropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"><span class="flag-icon flag-icon-us mr-1"></span> EN</a>
-                        <div class="dropdown-menu" arialabelledby="navbarDropdownMenuLink">
-                            <a class="dropdown-item" href="#"><span class="flag-icon flag-icon-de mr-1"></span> DE</a>
-                            <a class="dropdown-item" href="#"><span class="flag-icon flag-icon-es mr-1"></span> ES</a>
-                            <a class="dropdown-item" href="#"><span class="flag-icon flag-icon-fr mr-1"></span> FR</a>
-                            <a class="dropdown-item" href="#"><span class="flag-icon flag-icon-pt mr-1"></span> PT</a>
-                            <a class="dropdown-item" href="#"><span class="flag-icon flag-icon-cn mr-1"></span> ZH</a>
-                            <a class="dropdown-item" href="#"><span class="flag-icon flag-icon-kr mr-1"></span> KO</a>
-                        </div>
-                    </li>
-                </ul>
-            </div>
-        </div>
-    </nav>
-
-    <header class="masthead" style="background-color:#fff">
-        <!--<div class="container" style="margin-top:150px">
-            <div class="row" style="background-color:#ec6602;padding:20px 0px">
+    <header style="background-image:url({{ url_for('static', filename='img/navbar.png') }});background-size:100%;background-repeat:no-repeat">
+        <div class="container my-auto">
+            <div class="row" style="margin-top:280px">
                 <div class="col-lg-10 mx-auto">
-                    <h2 class="text-uppercase" style="font-size:42px">
-                        <strong>We are <span class="typer" data-typer-targets='{ "targets" : ["SIEMENS HEALTHINEERS.","PROCUREMENT.", "DATA.", "EXTRACTION.", "ROBOT.","INTELLIGENT."]}'></span><br>Welcome to SPIDER.</strong>
+                    <h2 class="text-uppercase">
+                        <strong>We are <span class="typer" data-typer-targets='{ "targets" : ["SIEMENS.","PROCUREMENT.", "DATA.", "EXTRACTION.", "ROBOT.","INTELLIGENT."]}'></span><br>Welcome to SPIDER.</strong>
                     </h2>
                 </div>
-            </div>
-        </div>-->
-        <div class="container" style="margin-top:200px">
-            <div class="row">
-                <div class="col-lg-12 text-center">
-                    <h3 class="section-heading">SEARCH FOR MATERIAL.</h3>
-                    <hr class="my-4">
+                <div class="col-lg-10 mx-auto">
+                    <h3>we help you to find information about your supplier.
+                    </h3>
                 </div>
             </div>
+        </div>
+
+
+    </header>
+
+
+    <section id="about" style="margin-top:0px">
+        <div class="container">
             <div class="row">
                 <div class="col-lg-8 mx-auto">
+                    <form name="sentMessage" id="contactForm" novalidate="novalidate">
                         <div class="control-group">
                             <div class="form-group floating-label-form-group controls mb-0 pb-2">
                                 <label>Material</label>
                                 <input class="form-control" id="name" type="text" placeholder="Which materials are you looking for?">
                                 <p class="help-block text-danger"></p>
                             </div>
-                            <div id="contact-chips">
 
-                            </div>
                         </div>
-                    
+                    </form>
                 </div>
-                <div class="col-lg-8 mx-auto"></div>
-                
+                <div id="contact-chips">
+
+                </div>
+                <div class="col-lg-8 mx-auto">
+
+                </div>
                 <div class="col-lg-8 mx-auto">
                     <br />
                     <div align="center">
-                        <button type="button" name="load_data" id="load_data" class="btn btn-primary btn-xl" style="border-radius: 5px">Load Data</button>
+                        <button type="button" name="load_data" onclick="myFunction()" id="load_data" class="btn btn-primary btn-xl" style="border-radius: 5px">Load Data</button>
                     </div>
                     <br />
-                            <div class="loader" id="spider-loader"></div>
-
+                    <div class="loader" id="spider-loader"></div>
                         <div id="employee_table">
 
                     </div>
@@ -116,10 +87,6 @@
             </div>
 
         </div>
-    </header>
-
-    <section id="about">
-        
     </section>
 
     <section id="services" style="background-color:#ffc400">
@@ -284,7 +251,7 @@
     <script src="{{ url_for('static', filename='vendor/scrollreveal/scrollreveal.min.js') }}"></script>
     <script src="{{ url_for('static', filename='vendor/magnific-popup/jquery.magnific-popup.min.js') }}"></script>
     <script src="{{ url_for('static', filename='vendor/jquery-tiping/jquery.typer.js') }}"></script>
-SPIDER
+
     <!-- Contact Form JavaScript -->
     <script src="{{ url_for('static', filename='js/jqBootstrapValidation.js') }}"></script>
     <script src="{{ url_for('static', filename='js/contact_me.js') }}"></script>
@@ -303,11 +270,11 @@ SPIDER
                      type: 'GET',
                      url: "http://localhost:5000/materials?name="+x,
                      success: function() {
-                            $.ajax({
+                                                   $.ajax({
                               cache: false,
-                              url: "{{ url_for('static', filename='SPIDER.csv') }}",
-                              dataType: "text",
-                              success: function(data) {
+                             url: "{{ url_for('static', filename='SPIDER.csv') }}",
+                             dataType: "text",
+                             success: function(data) {
                                     var employee_data = data.split(/\r?\n|\r/);
                                     var table_data = '<table class="table table-bordered table-striped">';
                                     for (var count = 0; count < employee_data.length; count++) {
@@ -317,13 +284,7 @@ SPIDER
                                             if (count === 0) {
                                                 table_data += '<th>' + cell_data[cell_count] + '</th>';
                                             } else {
-                                                if (cell_count === 2){
-                                                var cd = cell_data[cell_count]
-                                                var linktd = '<td>' + '<a target="_blank" href=' + cd + '>' + cd + '</a>' + '</td>'
-                                                table_data += linktd
-                                                } else{
                                                 table_data += '<td>' + cell_data[cell_count] + '</td>';
-                                                }    
                                             }
                                         }
                                         table_data += '</tr>';
@@ -335,7 +296,7 @@ SPIDER
                      }
                 });
                           document.getElementById("spider-loader").style.display = "none";
-                });
+              });
                 });
     </script>
     <script type="text/html" id="appendTemplate">
